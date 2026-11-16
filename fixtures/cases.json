@@ -308,6 +308,20 @@
         "b6",
         "b8"
       ]
+    },
+    {
+      "name": "two spaces inside the query are not collapsed",
+      "status": "all",
+      "query": "the  name",
+      "expectedIds": []
+    },
+    {
+      "name": "a query equal to the whole title matches",
+      "status": "all",
+      "query": "klara and the sun",
+      "expectedIds": [
+        "b10"
+      ]
     }
   ],
   "validateBook": [
@@ -398,6 +412,16 @@
         "author": " Frank Herbert "
       },
       "expected": {}
+    },
+    {
+      "name": "author with only a tab and a newline",
+      "input": {
+        "title": "Dune",
+        "author": "\t\n"
+      },
+      "expected": {
+        "author": "Author is required"
+      }
     }
   ]
 }
