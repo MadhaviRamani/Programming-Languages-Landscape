@@ -1,14 +1,15 @@
 # Reading List Logic Port
 
-Port the logic of the Reading List from TypeScript to Python 3. Read `README.md` and `SPEC.md` before you do anything.
+Port the logic of the Reading List from TypeScript to Python 3 (done) and to Java (the second-language bonus, in progress). Read `README.md` and `SPEC.md` before you do anything.
 
-I work **only** in the folder `python`. The folder `typescript` is the reference and read-only. The file `fixtures/cases.json` is shared by all languages and read-only.
+I work **only** in the folders `python` and `java`. The Python port is finished: do not change it while working on Java. The folder `typescript` is the reference and read-only. The file `fixtures/cases.json` is shared by all languages and read-only.
 
 ## Commands
 
 Run them in the folder of the language.
 
 - Python, in `python`: `python3 -m unittest`
+- Java, in `java`: `javac -d out src/*.java` and then `java -cp out BooksTest`
 - Reference, in `typescript`: `node --test`
 
 ## Rules
@@ -29,3 +30,7 @@ Run them in the folder of the language.
 ### Python 3
 
 - Python 3.9 compatible. Type hints on all functions, `dataclass` for the book, standard library only.
+
+### Java
+
+- JDK 17 or newer, the plain `javac` command, no build tool. Use `strip()` and `toLowerCase(Locale.ROOT)`. No `null` return values: return an empty list or map.
